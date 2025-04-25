@@ -173,9 +173,11 @@ nav {
 }
 
 .hero-image {
-    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    position: relative;
+    height: 100%;
 }
 
 .hero-image img {
@@ -183,30 +185,34 @@ nav {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: brightness(0.7);
+    filter: brightness(0.4);
 }
 
 .hero-content {
     position: absolute;
-    bottom: 20%;
-    left: 10%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: var(--light-text);
-    max-width: 600px;
-    animation: fadeInUp 1s ease forwards;
-    animation-delay: 0.5s;
-    opacity: 0;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+    z-index: 2;
 }
 
 .hero-content h2 {
-    font-size: 3rem;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    margin-bottom: 0.5rem;
+    font-size: 4rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 300;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    font-family: 'Raleway', sans-serif;
 }
 
 .slider-controls {
@@ -307,8 +313,9 @@ nav {
 
 .band-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(5, 1fr);
     gap: 2rem;
+    margin-top: 3rem;
 }
 
 .member {
@@ -326,7 +333,7 @@ nav {
 }
 
 .member-image {
-    height: 300px;
+    height: 200px;
     overflow: hidden;
 }
 
@@ -349,11 +356,13 @@ nav {
 .member h3 {
     color: var(--primary-color);
     margin-bottom: 0;
+    font-size: 1.2rem;
 }
 
 .member p {
     color: var(--secondary-color);
     font-weight: 600;
+    font-size: 0.9rem;
 }
 
 /* Repertoire Section */
@@ -667,16 +676,19 @@ footer {
     }
     
     .hero-content {
-        left: 5%;
-        bottom: 15%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        padding: 0 20px;
     }
     
     .hero-content h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     
     .hero-content p {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
     
     .section-title {
@@ -689,5 +701,23 @@ footer {
     
     .hero {
         height: 60vh;
+    }
+}
+
+@media (max-width: 1200px) {
+    .band-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .band-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .band-gallery {
+        grid-template-columns: 1fr;
     }
 } 
